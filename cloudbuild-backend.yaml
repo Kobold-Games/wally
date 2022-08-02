@@ -5,7 +5,7 @@ steps:
 
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/kobold-wally-registry/wally-backend']
+    args: ['push', 'gcr.io/kobold-wally-registry/wally-backend:$COMMIT_SHA']
 
   # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
